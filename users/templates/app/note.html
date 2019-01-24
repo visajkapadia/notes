@@ -1,0 +1,16 @@
+{% extends 'app/index.html'%}
+
+{% block body %}
+<div class="list-group">
+    {% for note in notes %}
+  <a href={{note.n_path}} class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{note.n_title}}</h5>
+      <small>1 Day ago</small>
+    </div>
+    <medium>Todd Ebert</medium><br>
+    <small>(California State University, Long Beach)</small>
+  </a>
+{% endfor %}
+</div>
+{% endblock %}

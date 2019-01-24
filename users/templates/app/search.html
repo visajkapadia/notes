@@ -1,0 +1,23 @@
+{% extends 'app/index.html' %}
+
+{% block body %}
+
+    <form action="/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+
+        <select name="uni" class="selectpicker" multiple data-live-search="true" data-width="auto" data-selected-text-format="count" data-actions-box="true" title="Choose Universities">
+            {% for u in universities %}
+            <option value={{u.u_id}} data-tokens={{u.u_name}}>{{ u.u_name }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="pro" class="selectpicker" multiple data-live-search="true" data-width="auto" data-selected-text-format="count" data-actions-box="true" title="Choose Professors">
+            {% for p in professors %}
+            <option value={{p.p_id}} data-tokens={{p.p_fname}}{{p.p_lname}}>{{ p.p_fname }}&nbsp{{ p.p_lname}}</option>
+            {% endfor %}
+        </select>
+
+    </form>
+
+{% endblock %}

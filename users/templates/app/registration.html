@@ -1,0 +1,15 @@
+{% extends 'app/index.html' %}
+
+{% block body %}
+<form action="/addUser/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input name="username" id="user_name" type="text" placeholder="User name">
+    <input type="text" name="fname" placeholder="First name">
+    <input type="text" placeholder="Last name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Re-enter Password">
+    <input type="submit" placeholder="Register">
+</form>
+{% endblock %}
