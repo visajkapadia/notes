@@ -1,4 +1,4 @@
 Django==1.11.17
 pytz==2018.7
 django-heroku
-gunicorn==19.7.1
+gunicorn==19.9.0
