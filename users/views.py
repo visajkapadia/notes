@@ -52,8 +52,19 @@ def search(request):
 
         queryset.sort(key=lambda x: n_ids[x.n_id], reverse=True)
 
+        uni = {}
+        pro = {}
+
+        for note in queryset:
+            uid = Note.objects.filter(n_id=note.n_id).values('u_id')
+            uni[note.n_id] = University.objects.get(u_id__in=uid)
+            pid = Note.objects.filter(n_id=note.n_id).values('p_id')
+            pro[note.n_id] = Professor.objects.get(p_id__in=pid)
+
         context = {
             'notes': queryset,
+            'uni': uni,
+            'prof': pro,
             'universities': universities,
             'professors': professors
         }

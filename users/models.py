@@ -60,7 +60,7 @@ class Professor(models.Model):
     d_id = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.p_fname + " " + self.p_lname
+        return "Prof. "+self.p_fname + " " + self.p_lname
 
 
 class Note(models.Model):
