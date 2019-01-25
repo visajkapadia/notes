@@ -1,1 +1,1 @@
-web: gunicorn notes.wsgi
+web: gunicorn gettingstarted.wsgi --log-file -
